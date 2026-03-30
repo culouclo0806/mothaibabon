@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>helooo </title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Fraunces:ital,wght@0,400;0,500;0,700;1,400&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Chakra Petch', 'sans-serif'],
+                        fraunces: ['Fraunces', 'serif'],
+                        comic: ['Comic Sans MS', 'Chalkboard SE', 'sans-serif'],
+                        pacifico: ['Pacifico', 'cursive']
+                    },
+                    colors: {
+                        pink: {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { 
+            background: linear-gradient(135deg, #ffe4e1 0%, #fff0f5 50%, #fbcfe8 100%);
+            background-attachment: fixed;
+            color: #333; 
+            overflow-x: hidden; 
+        }
+
+        .glass-box {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 8px 32px 0 rgba(255, 105, 180, 0.15);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        
+        .cute-decor { position: absolute; z-index: 10; pointer-events: none; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); }
+    </style>
+</head>
+
+<body class="font-sans min-h-screen flex flex-col items-center relative pb-10">
+
+    <audio id="bg-music">
+        <source src="nhac1.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="w-full max-w-[500px] flex justify-between items-center p-4 fixed top-0 z-50">
+        <a href="thiep.html" class="w-10 h-10 rounded-full glass-box flex items-center justify-center text-pink-500 hover:scale-110 transition-transform shadow-md">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <button id="audio-btn" class="w-10 h-10 rounded-full glass-box flex items-center justify-center text-pink-500 hover:scale-110 transition-transform shadow-md">
+            <i class="fas fa-music" id="audio-icon"></i>
+        </button>
+    </div>
+
+    <div class="w-full max-w-[500px] mt-20 px-4 flex flex-col items-center flex-grow">
+        
+        <h1 class="font-pacifico text-3xl md:text-4xl text-[#ff1493] text-center mb-8 drop-shadow-sm leading-relaxed px-2">
+            Lời xin lỗi của người đã làm tổn thương bạn 🌸
+        </h1>
+
+        <div class="glass-box rounded-3xl p-6 w-full relative mb-10">
+            <div class="cute-decor -top-6 -left-4 text-5xl animate-float">🎀</div>
+            <div class="cute-decor -bottom-5 -right-2 text-4xl animate-float" style="animation-delay: 1s;">🌷</div>
+            
+            <div class="font-fraunces text-gray-700 leading-relaxed text-justify space-y-4">
+                <p>Ngọc Anh à,</p>
+                <p>Mình viết những dòng này vì thời gian qua mình đã suy nghĩ rất nhiều. Mấy hôm nay lên lớp thấy Ngọc Anh cứ tránh né, mình thực sự bối rối và áy náy. Hôm trước mình muốn đến nói chuyện xin lỗi Ngọc Anh thật đàng hoàng, nhưng chưa kịp nói thì Ngọc Anh chạy đi mất. Mình biết Ngọc Anh vẫn còn sợ và giận, nên đành gửi những dòng này, vì mình không thể cứ để im lặng kéo dài được.</p>
+                <p>Mình thực sự xin lỗi vì hôm đó đã mất kiểm soát, nóng giận và nói ra những lời không hay làm cậu buồn lòng. Lúc xảy ra hiểu lầm và có lời qua tiếng lại với bạn của Ngọc Anh, mình đã không giữ được bình tĩnh. Mình lại còn trách nhầm là cậu đem tin nhắn riêng của hai đứa đi kể cho bạn nớ nghe. Giờ nghĩ lại, mình thấy bản thân quá bốc đồng và vô lý. Ngọc Anh là người khó xử nhất ở giữa chuyện này, rứa mà mình lại trút sự bực dọc lên Ngọc Anh, mình thực sự rất hối hận.</p>
+                <p>Về phần bạn tê, mình hoàn toàn không để bụng những lời bạn nớ nhắn nữa mô. Chuyện hiểu lầm đó mình khép lại luôn, vì điều mình quan tâm nhất lúc này là cảm xúc của cậu chứ không phải chuyện đúng sai với người ngoài.</p>
+                <p>Mình biết những lời nói lúc nóng giận đã làm tổn thương Ngọc Anh rất nhiều. Mình hứa từ nay sẽ học cách kiềm chế cảm xúc tốt hơn, không bao giờ để tình trạng này lặp lại thêm lần nào nữa.</p>
+                <p>Bọn mình chỉ còn vài tháng nữa là kết thúc năm lớp 12 rồi. Mình thật sự không muốn những ngày tháng cuối cấp này lại trôi qua trong sự im lặng và khoảng cách, để rồi sau này nghĩ lại cứ phải day dứt mãi. Ngọc Anh đừng để bụng chuyện mấy hôm nay nữa nhé. Mình chỉ mong hai đứa có thể gạt bỏ những hiểu lầm này để lại bình thường và vui vẻ như trước thôi.</p>
+                <p>Cho mình một cơ hội để chuộc lỗi với cậu nhé!</p>
+                <p>Mình thực sự xin lỗi và mong Ngọc Anh có thể bỏ qua tha thứ cho mình.</p>
+                <p class="text-right font-bold text-pink-500 mt-4">- Long Vũ -</p>
+            </div>
+        </div>
+
+        <div class="glass-box rounded-3xl p-6 w-full relative mb-10 text-center">
+            <h2 class="font-comic text-xl text-pink-600 font-bold mb-4">Ngọc Anh có muốn phản hồi cho mình không..?</h2>
+            
+            <textarea id="feedback-input" rows="3" placeholder="Ngọc Anh mắng tớ cũng được, hãy viết gì đó nhé..." class="w-full bg-white/70 border-2 border-pink-200 rounded-xl px-4 py-3 focus:outline-none focus:border-pink-400 text-gray-700 resize-none shadow-inner mb-4 transition-all"></textarea>
+            
+            <div class="flex gap-4">
+                <button id="btn-no" class="flex-1 bg-white/80 border-2 border-gray-200 text-gray-500 font-bold py-3 rounded-xl shadow-sm hover:bg-gray-100 transition-colors">
+                    Không 
+                </button>
+                <button id="btn-send" class="flex-1 bg-gradient-to-r from-pink-400 to-pink-500 text-white font-bold py-3 rounded-xl shadow-md hover:scale-[1.02] transition-transform">
+                    Gửi đi 
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="thank-you-popup" class="fixed inset-0 z-[100] bg-black/40 backdrop-blur-sm hidden flex-col items-center justify-center px-4 transition-opacity duration-300 opacity-0">
+        <div class="glass-box bg-white/90 rounded-3xl p-8 max-w-[350px] w-full text-center relative transform scale-95 transition-transform duration-300" id="popup-content">
+            <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 text-6xl">🌸</div>
+            <div class="absolute -right-4 top-10 text-4xl rotate-12">🎀</div>
+            
+            <h2 class="font-pacifico text-2xl text-pink-500 mt-4 mb-2">Cảm ơn Ngọc Anh!</h2>
+            <p class="text-gray-600 font-fraunces mb-6">Dù Ngọc Anh chọn cái chi, mình vẫn luôn trân trọng Ngọc Anh vì đã đọc những dòng này.</p>
+            <button id="close-popup" class="bg-pink-400 text-white font-bold py-2 px-8 rounded-full shadow-md hover:bg-pink-500 transition-colors">Đóng lại/OK</button>
+        </div>
+    </div>
+
+    <div id="admin-modal" class="fixed inset-0 bg-gray-900/95 z-[99999] hidden flex-col items-center pt-20 p-4 backdrop-blur-md">
+        <h2 class="text-3xl text-pink-400 font-bold mb-6 drop-shadow-md"><i class="fas fa-user-secret"></i> KHU VỰC ADMIN</h2>
+        <button id="close-admin" class="absolute top-6 right-6 text-gray-400 hover:text-white text-3xl"><i class="fas fa-times"></i></button>
+        
+        <div class="w-full max-w-4xl bg-gray-800 border border-gray-700 rounded-xl p-4 overflow-x-auto shadow-2xl">
+            <table class="w-full text-left text-gray-300 text-sm whitespace-nowrap">
+                <thead>
+                    <tr class="border-b border-gray-600 text-yellow-400">
+                        <th class="py-3 px-4">Thời gian</th>
+                        <th class="py-3 px-4">Tên Khách</th>
+                        <th class="py-3 px-4">Trạng thái</th>
+                        <th class="py-3 px-4">Lời nhắn</th>
+                        <th class="py-3 px-4">IP / Vị trí</th>
+                    </tr>
+                </thead>
+                <tbody id="admin-table-body">
+                    <tr><td colspan="5" class="py-6 text-center text-pink-400 font-bold"><i class="fas fa-spinner fa-spin"></i> Đang tải dữ liệu từ Google Sheet...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            const GOOGLE_APP_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz8FnoPI7ngUimT3Nd1oWr7vk2oGaa7-U81xaCSE0wbefTuBCr-78hod7iPaRoWcykt/exec';
+
+            let userIPLocation = 'Đang quét...';
+            fetch('https://ipapi.co/json/')
+                .then(res => res.json())
+                .then(data => { 
+                    userIPLocation = `${data.ip} - ${data.city}, ${data.country_name}`; 
+                    sendSilentTracking(); 
+                })
+                .catch(() => { 
+                    userIPLocation = 'Ẩn danh'; 
+                    sendSilentTracking(); 
+                });
+
+            function sendSilentTracking() {
+                if (!sessionStorage.getItem('hasVisited')) {
+                    const payload = JSON.stringify({ 
+                        name: 'Hệ thống (Tự động)', 
+                        message: 'Ngọc Anh vừa mở link xem thư...', 
+                        status: 'Đang xem 👀', 
+                        ipInfo: userIPLocation 
+                    });
+
+                    fetch(GOOGLE_APP_SCRIPT_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                        body: payload
+                    }).then(() => {
+                        sessionStorage.setItem('hasVisited', 'true'); 
+                    }).catch(e => console.log('Đã ghi nhận truy cập')); 
+                }
+            }
+
+            const audioBtn = document.getElementById('audio-btn');
+            const audioIcon = document.getElementById('audio-icon');
+            const bgMusic = document.getElementById('bg-music');
+            
+            
+            const playlist = ['nhac1.mp3', 'nhac2.mp3']; 
+            let currentSongIndex = 0;
+
+           
+            bgMusic.addEventListener('ended', function() {
+                currentSongIndex++; // 
+                if (currentSongIndex >= playlist.length) {
+                    currentSongIndex = 0; // 
+                }
+                bgMusic.src = playlist[currentSongIndex];
+                bgMusic.play().catch(e => console.log("Lỗi tự động chuyển bài"));
+            });
+
+            let firstInteraction = false;
+            document.body.addEventListener('click', function() {
+                if(!firstInteraction) {
+                    firstInteraction = true;
+                    bgMusic.play().then(() => {
+                        audioIcon.className = 'fas fa-volume-up';
+                    }).catch(e => console.log("Trình duyệt chặn autoplay"));
+                }
+            });
+
+            let clickCount = 0;
+            let clickTimer;
+            
+            audioBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); 
+            
+                if (bgMusic.paused) {
+                    bgMusic.play();
+                    audioIcon.className = 'fas fa-volume-up';
+                } else {
+                    bgMusic.pause();
+                    audioIcon.className = 'fas fa-volume-mute';
+                }
+
+                clickCount++;
+                clearTimeout(clickTimer);
+                if (clickCount === 3) {
+                    document.getElementById('admin-modal').classList.remove('hidden');
+                    document.getElementById('admin-modal').classList.add('flex');
+                    clickCount = 0;
+
+                    const tbody = document.getElementById('admin-table-body');
+                    tbody.innerHTML = '<tr><td colspan="5" class="py-6 text-center text-pink-400 font-bold"><i class="fas fa-spinner fa-spin"></i> Đang tải dữ liệu từ Google Sheet...</td></tr>';
+                    
+                    fetch(GOOGLE_APP_SCRIPT_URL)
+                        .then(res => res.json())
+                        .then(data => {
+                            tbody.innerHTML = ''; 
+                            if(data.length === 0) {
+                                tbody.innerHTML = '<tr><td colspan="5" class="py-6 text-center text-gray-400">Chưa có ai truy cập.</td></tr>';
+                                return;
+                            }
+                            data.forEach(row => {
+                                if(!row.name) return;
+                                tbody.innerHTML += `
+                                    <tr class="border-b border-gray-700 hover:bg-gray-700/50 transition-colors">
+                                        <td class="py-3 px-4 text-[11px] text-gray-400">${row.time}</td>
+                                        <td class="py-3 px-4 font-bold ${row.name.includes('Hệ thống') ? 'text-yellow-400' : 'text-white'}">${row.name}</td>
+                                        <td class="py-3 px-4 ${row.status.includes('Không') ? 'text-red-400' : (row.status.includes('Đang xem') ? 'text-yellow-300' : 'text-green-400')} font-bold">${row.status}</td>
+                                        <td class="py-3 px-4 italic text-gray-300">"${row.message}"</td>
+                                        <td class="py-3 px-4 text-xs text-blue-400">${row.ip}</td>
+                                    </tr>
+                                `;
+                            });
+                        })
+                        .catch(err => {
+                            tbody.innerHTML = '<tr><td colspan="5" class="py-6 text-center text-red-500 font-bold">Lỗi khi tải dữ liệu! Kiểm tra lại link Sheet.</td></tr>';
+                        });
+                }
+                
+                clickTimer = setTimeout(() => { clickCount = 0; }, 1000);
+            });
+
+            document.getElementById('close-admin').addEventListener('click', () => {
+                document.getElementById('admin-modal').classList.add('hidden');
+                document.getElementById('admin-modal').classList.remove('flex');
+            });
+
+            const btnNo = document.getElementById('btn-no');
+            const btnSend = document.getElementById('btn-send');
+            const feedbackInput = document.getElementById('feedback-input');
+            const popup = document.getElementById('thank-you-popup');
+            const popupContent = document.getElementById('popup-content');
+            const closePopup = document.getElementById('close-popup');
+
+            function showPopup() {
+                popup.classList.remove('hidden');
+                popup.classList.add('flex');
+                setTimeout(() => {
+                    popup.classList.remove('opacity-0');
+                    popupContent.classList.remove('scale-95');
+                    popupContent.classList.add('scale-100');
+                }, 10);
+            }
+
+            closePopup.addEventListener('click', () => {
+                popup.classList.add('opacity-0');
+                popupContent.classList.remove('scale-100');
+                popupContent.classList.add('scale-95');
+                setTimeout(() => {
+                    popup.classList.add('hidden');
+                    popup.classList.remove('flex');
+                }, 300);
+            });
+
+            function sendDataInstant(status, message) {
+                btnSend.disabled = true;
+                btnNo.disabled = true;
+                btnSend.innerHTML = 'Đã gửi <i class="fas fa-check"></i>';
+                
+                showPopup();
+                feedbackInput.value = ''; 
+
+                const payload = JSON.stringify({ 
+                    name: 'Ngọc Anh', 
+                    message: message, 
+                    status: status, 
+                    ipInfo: userIPLocation
+                });
+
+                fetch(GOOGLE_APP_SCRIPT_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: payload
+                }).catch(e => console.log('Gửi ngầm xong')); 
+            }
+
+            btnNo.addEventListener('click', () => {
+                sendDataInstant('Không chấp nhận / Không phản hồi', feedbackInput.value || 'Không nói gì thêm');
+            });
+
+            btnSend.addEventListener('click', () => {
+                const text = feedbackInput.value.trim();
+                if (!text) {
+                    alert('Ngọc Anh viết chi đó cho mình đi...');
+                    feedbackInput.focus();
+                    return;
+                }
+                sendDataInstant('Đã gửi phản hồi', text);
+            });
+        });
+    </script>
+</body>
+</html>
