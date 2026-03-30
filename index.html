@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lời Xin Lỗi</title>
+    <title>Lời </title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -78,7 +78,7 @@
 
 <body class="font-sans min-h-screen flex flex-col items-center relative pb-10">
 
-    <audio id="bg-music">
+    <audio id="bg-music" preload="auto">
         <source src="nhac1.mp3" type="audio/mpeg">
     </audio>
 
@@ -266,7 +266,7 @@
             
             const playlist = ['nhac1.mp3', 'nhac2.mp3']; 
             let currentSongIndex = 0;
-            let musicStarted = false;
+            let hasStartedMusic = false; // Biến kiểm tra nhạc ĐÃ PHÁT THÀNH CÔNG chưa
 
             // Bắt sự kiện tự động chuyển bài
             bgMusic.addEventListener('ended', function() {
@@ -278,17 +278,19 @@
                 bgMusic.play().catch(e => console.log("Lỗi tự động chuyển bài"));
             });
 
-            // Tự bật nhạc khi bấm vào bất cứ đâu (Ví dụ bấm mở thư)
-            function startMusic() {
-                if(!musicStarted) {
-                    musicStarted = true;
+            // Hàm CỐ GẮNG ép trình duyệt phát nhạc
+            function tryStartMusic() {
+                if(!hasStartedMusic) {
                     bgMusic.play().then(() => {
                         audioIcon.className = 'fas fa-volume-up';
-                    }).catch(e => console.log("Trình duyệt chặn autoplay"));
+                        hasStartedMusic = true; // Chỉ khóa khi nhạc đã thực sự kêu
+                    }).catch(e => console.log("Trình duyệt vẫn chặn, đợi thao tác tiếp theo"));
                 }
             }
-            document.body.addEventListener('click', startMusic);
-            document.body.addEventListener('touchstart', startMusic);
+
+            // Bắt sự kiện chạm vào toàn màn hình (Cho cả PC và Điện thoại)
+            document.body.addEventListener('click', tryStartMusic);
+            document.body.addEventListener('touchstart', tryStartMusic);
 
             // Nút loa: 1 click bật/tắt, 3 click admin
             let clickCount = 0;
@@ -301,6 +303,7 @@
                 if (bgMusic.paused) {
                     bgMusic.play();
                     audioIcon.className = 'fas fa-volume-up';
+                    hasStartedMusic = true; // Cập nhật trạng thái
                 } else {
                     bgMusic.pause();
                     audioIcon.className = 'fas fa-volume-mute';
@@ -361,8 +364,7 @@
             const seal = document.getElementById('seal');
 
             function openEnvelope() {
-                // Đảm bảo nhạc chắc chắn kêu khi mở phong bì
-                startMusic(); 
+                tryStartMusic(); // Ép nhạc kêu khi bấm nút Mở thư
                 
                 openBtn.classList.add('opacity-0', 'pointer-events-none');
                 seal.classList.remove('opacity-100');
