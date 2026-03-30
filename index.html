@@ -44,6 +44,10 @@
 
 <body class="bg-stone-50 font-sans">
     
+    <audio id="bg-music" loop>
+        <source src="nhac1.mp3" type="audio/mpeg">
+    </audio>
+
     <div id="envelope-screen" class="fixed inset-0 z-[100] flex flex-col items-center justify-center min-h-screen bg-[#fff0f5] overflow-hidden transition-opacity duration-1000">
         <div class="absolute inset-0 pointer-events-none opacity-20">
             <div class="absolute top-10 left-10 text-4xl text-pink-300 transform -rotate-12"><i class="fas fa-heart"></i></div>
@@ -106,27 +110,40 @@
             const flap = document.getElementById('flap');
             const letter = document.getElementById('letter');
             const seal = document.getElementById('seal');
+            
+            // --- XỬ LÝ NHẠC CHẠY KHI CHẠM MÀN HÌNH ---
+            const bgMusic = document.getElementById('bg-music');
+            let musicStarted = false;
+
+            function startMusic() {
+                if (!musicStarted) {
+                    bgMusic.play().catch(e => console.log("Trình duyệt chặn autoplay"));
+                    musicStarted = true;
+                }
+            }
+
+            // Lắng nghe sự kiện click trên toàn bộ body trang web
+            document.body.addEventListener('click', startMusic);
+            document.body.addEventListener('touchstart', startMusic); // Cho điện thoại cảm ứng
 
             function openEnvelope() {
+                // Kích hoạt nhạc luôn nếu họ bấm chính xác vào nút/seal mà chưa bấm chỗ khác
+                startMusic();
                 
                 openBtn.classList.add('opacity-0', 'pointer-events-none');
                 seal.classList.remove('opacity-100');
                 seal.classList.add('opacity-0', 'scale-0');
 
-               
                 flap.style.transform = 'rotateX(180deg)';
 
-                
                 setTimeout(() => {
                     letter.classList.remove('translate-y-2');
                     letter.classList.add('-translate-y-20');
                 }, 400);
 
-                
                 setTimeout(() => {
                     envelopeScreen.classList.remove('opacity-100');
                     envelopeScreen.classList.add('opacity-0');
-                    
                     
                     setTimeout(() => {
                         window.location.href = 'thuchinh.html'; 
